@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .student-details {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+    <script>
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+            sayName() {
+                return this.name;
+            }
+        }
+
+        class Student extends Person {
+            constructor(name, rollNumber) {
+                super(name);
+                this.rollNumber = rollNumber;
+            }
+            logDetails() {
+                return `Name: ${this.name}, Roll Number: ${this.rollNumber}`;
+            }
+            sayName() {
+                return `From:NBSC Student`;
+            }
+        }
+
+        window.onload = function() {
+            var student = new Student("Lawrence", 11);
+            document.getElementById('details').innerText = student.logDetails();
+            document.getElementById('name').innerText = student.sayName();
+        };
+    </script>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <div class="student-details">
+        <p id="details"></p>
+        <p id="name"></p>
+    </div>
+</body>
+</html>
